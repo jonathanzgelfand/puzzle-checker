@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Puzzle Checker</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>What's the answer to the puzzle?</h1>
+  <input type="text" id="answerInput" placeholder="Enter your answer" />
+  <button onclick="checkAnswer()">Submit</button>
+  <div id="result"></div>
+
+  <script>
+    function checkAnswer() {
+      const userAnswer = document.getElementById('answerInput').value.trim().toLowerCase();
+      const correctAnswer = "42"; // CHANGE THIS TO YOUR PUZZLE ANSWER
+
+      const resultDiv = document.getElementById('result');
+      if (userAnswer === correctAnswer) {
+        resultDiv.textContent = "✅ Correct!";
+        resultDiv.style.color = "green";
+      } else {
+        resultDiv.textContent = "❌ Incorrect. Try again.";
+        resultDiv.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
